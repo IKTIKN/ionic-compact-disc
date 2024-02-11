@@ -24,3 +24,17 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+.center-content {
+    padding: 16px;
+    margin: 0 auto;
+    top: 50%;
+    width: 100%;
+    transform: translate(0, -50%);
+    // background-color: rgb(230, 213, 211);
+    position: absolute;
+}
