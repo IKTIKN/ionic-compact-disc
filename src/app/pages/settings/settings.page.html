@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Account</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngIf="authService.user$ | async as user" lines="none">
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label></ion-label>
+          <ion-button fill="clear">
+            Change avatar
+          </ion-button>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Username</ion-label>
+          {{ user.displayName }}
+        </ion-item>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          {{ user.email }}
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-button fill="clear">
+            Change password
+          </ion-button>
+        </ion-item>
+        <br>
+        <ion-button fill="fill" (click)="logout()">
+          <ion-icon slot="start" name="log-out"></ion-icon>
+          Logout
+        </ion-button>
+    
+        <ion-button color="danger" fill="clear" >
+          <ion-icon slot="start" name="trash"></ion-icon>
+          Delete account
+        </ion-button>
+      </ion-list>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>
