@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <div class="center-content">
+    <ion-card-header>
+      <ion-card-title>Signup</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="signupForm">
+        <ion-input formControlName="email" type="email" fill="solid" label="Email" labelPlacement="floating" helperText=""
+          errorText="Invalid email" email></ion-input>
+        <br>
+        <ion-input formControlName="password" type="password" fill="solid" label="Password" labelPlacement="floating" helperText=""
+          errorText="Invalid password" password></ion-input>
+        <br>
+        <ion-checkbox formControlName="terms" labelPlacement="end">I agree to the terms and conditions</ion-checkbox>
+        <br><br>
+      </form>
+      <ion-button expand="block" (click)="signupButtonClick()" [disabled]="!signupForm.valid">Signup</ion-button>
+    </ion-card-content>
+    <br>
+    <ion-button fill="clear" [routerLink]="['/login']">Already have an account?</ion-button>
+  </div>
+</ion-content>
