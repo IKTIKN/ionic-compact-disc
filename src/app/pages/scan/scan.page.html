@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="barcode.isScanning" class="container">
+
+    <!-- Scanner area -->
+    <div class="barcode-scanner--area--container">
+      <div class="square surround-cover">
+        <div class="barcode-scanner--area--outer surround-cover">
+          <div class="barcode-scanner--area--inner"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flashlight FAB -->
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="barcode.toggleTorch()">
+        <ng-container *ngIf="barcode.torchState; else flash">
+          <ion-icon name="flash-off-outline"></ion-icon>
+        </ng-container>
+        <ng-template #flash>
+            <ion-icon name="flash-outline"></ion-icon>
+        </ng-template>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div>
+
+  <!-- Toast for error messages -->
+  <ion-toast [isOpen]="barcode.isToastOpen" [message]="barcode.toastMessage" [duration]="5000"
+    (didDismiss)="setToast(false)">
+  </ion-toast>
+
+</ion-content>
