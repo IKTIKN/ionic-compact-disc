@@ -1,0 +1,33 @@
+<ion-card button (click)="navigateToReleaseDetail()">
+
+  <!-- Normal album cover -->
+  <img class="album-cover list-item-album-cover" alt="Album cover" src="{{ result.cover_image }}" />
+
+  <!-- Blurred album cover-->
+  <img class="album-cover blurred-album-cover" alt="Album cover" src="{{ result.cover_image }}" />
+
+  <ion-card-header>
+    
+    <ion-card-subtitle>
+      <!-- Artist -->
+      {{ result.title.split(' - ')[0] }}
+
+      <!-- Country container with flag(s) -->
+      <div class="country-container">
+        <ng-container *ngFor="let f of flags">
+          <img src="{{ f.flag }}" alt="Flag" class="flag">
+          <span class="ampersand" *ngIf="!isLast(f)"> /</span>
+        </ng-container>
+      </div>
+
+    </ion-card-subtitle>
+
+    <!-- Release name -->
+    <ion-card-title>{{ result.title.split(' - ')[1] }}</ion-card-title>
+
+    <!-- Formatted release data: Genres, Formats, Year -->
+    <ion-card-subtitle>{{ formattedSearchResult }}</ion-card-subtitle>
+
+  </ion-card-header>
+
+</ion-card>

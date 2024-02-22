@@ -1,0 +1,36 @@
+ion-card {
+    --background: var(--ion-card-background-color);
+}
+
+.album-cover {
+    max-height: 400px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.list-item-album-cover {
+    max-width: 100%;
+    z-index: 1!important;
+    background-color: black;
+}
+
+.blurred-album-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    z-index: -1;
+}
+
+.country-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .flag {
+        height: 20px;
+    }
+}
