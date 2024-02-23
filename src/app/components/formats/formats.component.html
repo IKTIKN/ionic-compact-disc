@@ -1,0 +1,18 @@
+<!-- List header -->
+<ion-item class="list-header" lines="none">
+  <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+  Formats
+</ion-item>
+
+<!-- Display the media formats of the release,
+  based on the available Description and Text keys in the Formats object -->
+<ion-item lines="none" *ngFor="let format of formats">
+  <ion-label class="label">{{ format.name }}</ion-label>
+  <span class="item-value">
+    {{ format.qty }}{{ format.descriptions || format.text ? 'x' : '' }}
+    {{ format.descriptions ? common.formatArray(format.descriptions) : format.text }}
+  </span>
+</ion-item>
+
+<!-- Space -->
+<ion-item lines="none"></ion-item>
