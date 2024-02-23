@@ -1,0 +1,16 @@
+.rating-bar {
+    position: relative;
+    width: 100%;
+    text-align: end;
+}
+
+.rating-green {
+    background-color: var(--ion-color-success);
+    height: 2px;
+    margin: 8px 0;
+}
+
+.rating-red {
+    background-color: var(--ion-color-danger);
+    width: 100%;
+}

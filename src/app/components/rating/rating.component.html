@@ -1,0 +1,9 @@
+<!-- Rating bar -->
+<div class="rating-bar">
+  {{ formatRating(percentage) }}%
+  <div class="rating-red">
+    <!-- Fill the red bar with green: User score as width -->
+    <div class="rating-green" [ngStyle]="{'width' : percentage + '%' }"></div>
+  </div>
+  {{ rating.count }} votes
+</div>
