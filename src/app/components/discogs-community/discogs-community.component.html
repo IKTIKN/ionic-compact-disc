@@ -1,0 +1,34 @@
+<!-- List header -->
+<ion-item class="list-header" lines="none">
+  <ion-icon name="people-outline" slot="start"></ion-icon>
+  Discogs community
+</ion-item>
+
+<!-- Total members who have this release -->
+<ion-item lines="none">
+  <ion-label class="label">Have</ion-label>{{ community.have }}
+</ion-item>
+
+<!-- Total members who want this release -->
+<ion-item lines="none">
+  <ion-label class="label">Want</ion-label>{{ community.want }}
+</ion-item>
+
+<!-- Total releases for sale on the market -->
+<ion-item lines="none">
+  <ion-label class="label">Total for sale</ion-label>{{ forSale }}
+</ion-item>
+
+<!-- Lowest price on the market for this release -->
+<ion-item lines="none" *ngIf="forSale">
+  <ion-label class="label">Lowest price</ion-label>{{ lowestPrice | currency:'EUR' }}
+</ion-item>
+
+<!-- User rating: Percentage, Votecount -->
+<ion-item lines="none" class="rating" *ngIf="community.rating.count">
+  <ion-label class="label">Rating</ion-label>
+  <app-rating [rating]="community.rating"></app-rating>
+</ion-item>
+
+<!-- Space -->
+<ion-item lines="none"></ion-item>
