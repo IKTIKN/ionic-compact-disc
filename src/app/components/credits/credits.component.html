@@ -1,0 +1,17 @@
+<ng-container *ngIf="credits.length">
+
+  <!-- List header -->
+  <ion-item class="list-header" lines="none">
+    <ion-icon name="cash-outline" slot="start"></ion-icon>
+    Credits
+  </ion-item>
+
+  <!-- Credits: Role -> Name -->
+  <ion-item lines="none" *ngFor="let credit of credits">
+    <ion-label class="label">{{ credit.role }}</ion-label>{{ credit.name }}
+  </ion-item>
+
+  <!-- Space -->
+  <ion-item lines="none"></ion-item>
+  
+</ng-container>
