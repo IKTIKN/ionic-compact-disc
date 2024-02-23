@@ -1,0 +1,15 @@
+<ng-container *ngIf="tracklist.length">
+
+  <!-- List header -->
+  <ion-item class="list-header" lines="none">
+    <ion-icon name="musical-notes-outline" slot="start"></ion-icon>
+    Tracklist
+  </ion-item>
+
+  <!-- Tracks -->
+  <app-track *ngFor="let track of tracklist" [positionWidth]="positionWidth" [track]="track"></app-track>
+
+  <!-- Space -->
+  <ion-item lines="none"></ion-item>
+  
+</ng-container>

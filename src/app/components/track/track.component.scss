@@ -1,0 +1,30 @@
+h6 {
+    color: var(--ion-text-color);
+    font-size: medium;
+}
+
+.disc-title {
+    color: var(--ion-color-step-600);
+    font-size: small;
+}
+
+.track-position-label {
+    margin: 0 18px 0 0;
+    color: var(--ion-color-step-600);
+    font-size: small;
+    text-align: end;
+}
+
+.expansion {
+    font-size: small;
+    --background: var(--ion-list-header-background-color);
+}
+
+.chevron {
+    color: var(--ion-color-step-200);
+    font-size: var(--detail-icon-font-size);
+}
+
+.invisible {
+    visibility: hidden;
+}

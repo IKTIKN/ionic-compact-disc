@@ -1,0 +1,30 @@
+<!-- Track information: Position, Title, Duration -->
+<ion-item lines="none" [attr.button]="track.extraartists ? '' : null" (click)="toggleIsExpanded()">
+
+  <ion-icon slot="end" [name]="getDetailIcon()" class="chevron"></ion-icon>
+
+  <!-- Track position -->
+  <ion-label [ngStyle]="{'max-width': positionWidth}" class="track-position-label">{{ track.position }}</ion-label>
+
+  <!-- Track duration and title -->
+  <ion-label>
+    <p>{{ track.duration }}</p>
+    <h6 [ngClass]="track.type_=='heading' ? 'disc-title' : ''">{{ track.title }}</h6>
+  </ion-label>
+
+</ion-item>
+
+<!-- Expansion panel for additional artists featured on this track -->
+<ng-container *ngIf="isExpanded">
+
+  <ion-item class="expansion" lines="none" *ngFor="let artist of track.extraartists">
+    <!-- Spacer -->
+    <ion-label [ngStyle]="{'max-width': positionWidth}" class="track-position-label invisible"></ion-label>
+    <!-- Artist role, name -->
+    <ion-label class="label">{{ artist.role }}</ion-label>{{ artist.name }}
+  </ion-item>
+
+  <!-- Spacer -->
+  <ion-item lines="none"></ion-item>
+  
+</ng-container>
