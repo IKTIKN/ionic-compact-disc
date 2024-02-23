@@ -1,0 +1,18 @@
+<ng-container *ngIf="identifiers.length">
+
+  <!-- List header -->
+  <ion-item class="list-header" lines="none">
+    <ion-icon name="barcode-outline" slot="start"></ion-icon>
+    Identifiers
+  </ion-item>
+
+  <!-- Identifiers -->
+  <ion-item lines="none" *ngFor="let id of identifiers">
+    <ion-label class="label">{{ common.formatLabel(id.type) }}</ion-label>
+    <span class="item-value">{{ id.value }}</span>
+  </ion-item>
+
+  <!-- Space -->
+  <ion-item lines="none"></ion-item>
+
+</ng-container>
