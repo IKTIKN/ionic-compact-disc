@@ -1,0 +1,54 @@
+<!-- List header -->
+<ion-item class="list-header" lines="none">
+  <ion-icon name="disc-outline" slot="start"></ion-icon>
+  Release
+</ion-item>
+
+<!-- Title -->
+<ion-item lines="none">
+  <ion-label class="label">Title</ion-label>
+  <span class="item-value">{{ release.title }}</span>
+</ion-item>
+
+<!-- Artist -->
+<ion-item lines="none" *ngFor="let artist of release.artists">
+  <ion-label class="label">Artist</ion-label>
+  <span class="item-value">{{ artist.name }}</span>
+</ion-item>
+
+<!-- Genres -->
+<ion-item lines="none">
+  <ion-label class="label">Genres</ion-label>
+  <span class="item-value">{{ common.formatArray(release.genres) }}</span>
+</ion-item>
+
+<!-- Styles -->
+<ion-item lines="none">
+  <ion-label class="label">Styles</ion-label>
+  <span class="item-value">{{ common.formatArray(release.styles) }}</span>  
+</ion-item>
+
+<!-- Release date (If available) -->
+<ion-item lines="none" *ngIf="release.released_formatted">
+  <ion-label class="label">Released</ion-label>{{ release.released_formatted }}
+</ion-item>
+
+<!-- Record labels -->
+<ion-item lines="none" *ngFor="let label of release.labels">
+  <ion-label class="label">Label</ion-label>
+  <span class="item-value">{{ label.name }}</span>
+</ion-item>
+
+<!-- Country of release -->
+<ion-item lines="none" >
+  <ion-label class="label">Region</ion-label>
+  <ng-container *ngFor="let cf of countryFlags">
+    {{ cf.country }}
+    <img src="{{ cf.flag }}" alt="Flag" class="flag">
+    <span class="ampersand" *ngIf="!country.isLast(cf, countryFlags)">/</span>
+  </ng-container>
+
+</ion-item>
+
+<!-- Space -->
+<ion-item lines="none"></ion-item>
