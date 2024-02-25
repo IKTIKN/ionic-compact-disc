@@ -16,7 +16,7 @@
       <div class="country-container">
         <ng-container *ngFor="let f of flags">
           <img src="{{ f.flag }}" alt="Flag" class="flag">
-          <span class="ampersand" *ngIf="!isLast(f)"> /</span>
+          <span class="ampersand" *ngIf="!country.isLast(f, flags)"> /</span>
         </ng-container>
       </div>
 
