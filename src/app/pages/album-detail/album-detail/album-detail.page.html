@@ -1,0 +1,70 @@
+<!-- Display spinner while waiting for the release response -->
+<ng-container *ngIf="release; else spinner">
+
+  <!-- Title header -->
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ release.title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">{{ release.title }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <!-- Album cover -->
+    <div class="album-cover">
+      <img src="{{ coverImg }}" alt="" class="cover-image">
+      <img src="{{ coverImg }}" alt="" class="blur-image">
+
+      <ion-item class="icon-bar" lines="none">
+        <ion-icon slot="end" name="share-social-outline"></ion-icon>
+        <ion-icon slot="end" name="heart-outline"></ion-icon>
+        <ion-icon slot="end" name="bookmark-outline"></ion-icon>
+        <ion-icon slot="end" name="logo-firebase"></ion-icon>
+      </ion-item>
+    </div>
+
+    <!-- Release data -->
+    <div class="album-details">
+
+      <!-- Solid header background to stick behind transparent toolbar -->
+      <div class="header-background"></div>
+
+      <!-- Tracklist -->
+      <app-tracklist [tracklist]="release.tracklist"></app-tracklist>
+
+      <!-- Release -->
+      <app-release [release]="release"></app-release>
+
+      <!-- Discogs community -->
+      <app-discogs-community
+        [community]="release.community"
+        [forSale]="release.num_for_sale"
+        [lowestPrice]="release.lowest_price">
+      </app-discogs-community>
+
+      <!-- Formats -->
+      <app-formats [formats]="release.formats"></app-formats>
+
+      <!-- Identifiers -->
+      <app-identifiers [identifiers]="release.identifiers"></app-identifiers>
+
+      <!-- Credits -->
+      <app-credits [credits]="release.extraartists"></app-credits>
+
+    </div>
+  </ion-content>
+
+</ng-container>
+
+<!-- Spinner -->
+<ng-template #spinner>
+  <ion-spinner color="primary"></ion-spinner>
+</ng-template>

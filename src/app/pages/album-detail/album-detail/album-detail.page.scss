@@ -1,0 +1,44 @@
+.header-background {
+    position: sticky;
+    top: -56px;
+    height: 56px!important;
+    margin-bottom: -56px;
+    z-index: 21;
+    background-color: var(--ion-item-background);
+}
+
+.album-cover {
+    position: sticky;
+    top: 0;
+    z-index: -1;
+
+    .blur-image {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-height: 100%;
+        bottom: 0;
+        filter: blur(var(--ion-pixel-blur));
+        -webkit-filter: blur(var(--ion-pixel-blur));
+        z-index: -1;
+    }
+
+    .cover-image {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    ion-icon {
+        padding-left: 8px!important;
+    };
+}
+
+.album-details {
+    background-color: var(--ion-item-background);
+}
+
+.icon-bar, ion-toolbar {
+    --background: rgba(36, 36, 36, 0);
+}
