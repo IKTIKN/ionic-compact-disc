@@ -34,6 +34,22 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'scan',
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    loadChildren: () => import('./pages/scan/scan.module').then( m => m.ScanPageModule)
+  },
+  {
+    path: 'scanresult',
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    loadChildren: () => import('./pages/scan-result/scan-result.module').then( m => m.ScanResultPageModule)
+  },
+  {
+    path: 'album-detail',
+    loadChildren: () => import('./pages/album-detail/album-detail/album-detail.module').then( m => m.AlbumDetailPageModule)
   }
 ];
 
