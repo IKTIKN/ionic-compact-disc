@@ -42,15 +42,6 @@ ion-spinner {
     transform: translateY(-50%);
 }
 
-.center-content {
-    padding: 16px;
-    margin: 0 auto;
-    top: 50%;
-    width: 100%;
-    transform: translate(0, -50%);
-    position: absolute;
-}
-
 .list-header {
     --background: var(--ion-list-header-background-color);
     font-size: large;
