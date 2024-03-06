@@ -1,0 +1,38 @@
+<!-- Title header -->
+<ion-header [translucent]="true" *ngIf="!isSearching">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/collection']">
+        <ion-icon slot="icon-only" name="arrow-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ formatTitle() }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Page content -->
+<ion-content [fullscreen]="true">
+
+  <ng-container *ngIf="!isSearching; else spinner">
+
+    <!-- IOS Title header -->
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">{{ formatTitle() }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <!-- List of albums from scan result -->
+    <app-album-card *ngFor="let result of results" [result]="result"></app-album-card>
+
+    <!-- Display empty page message when there are no results -->
+    <app-empty-page-message *ngIf="!isSearching && results.length==0" [message]="emptyPageMessage"></app-empty-page-message>
+    
+  </ng-container>
+
+  <!-- Spinner -->
+  <ng-template #spinner>
+    <ion-spinner color="primary"></ion-spinner>
+  </ng-template>
+
+</ion-content>
