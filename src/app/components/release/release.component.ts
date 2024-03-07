@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonService } from 'src/app/services/common/common.service';
-import { ReleaseResponse } from 'src/app/interfaces/ReleaseResponse';
+import { ReleaseResponse } from 'src/app/interfaces/apiresponses/ReleaseResponse';
 import { CountryService } from 'src/app/services/country/country.service';
 import { CountryFlag } from 'src/app/interfaces/CountryFlag';
 

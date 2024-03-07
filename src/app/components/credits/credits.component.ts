@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Extraartist } from 'src/app/interfaces/ReleaseResponse';
+import { Extraartist } from 'src/app/interfaces/apiresponses/ReleaseResponse';
 
 @Component({
   selector: 'app-credits',

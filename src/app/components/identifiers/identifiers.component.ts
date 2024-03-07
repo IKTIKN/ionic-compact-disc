@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { Identifier } from 'src/app/interfaces/ReleaseResponse';
+import { Identifier } from 'src/app/interfaces/apiresponses/ReleaseResponse';
 import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({

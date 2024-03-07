@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Track } from 'src/app/interfaces/ReleaseResponse';
+import { Track } from 'src/app/interfaces/apiresponses/ReleaseResponse';
 
 @Component({
   selector: 'app-track',

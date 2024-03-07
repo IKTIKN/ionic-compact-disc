@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountryFlag } from 'src/app/interfaces/CountryFlag';
-import { Result } from 'src/app/interfaces/SearchResponse';
+import { Result } from 'src/app/interfaces/apiresponses/SearchResponse';
 import { CommonService } from 'src/app/services/common/common.service';
 import { CountryService } from 'src/app/services/country/country.service';
 
